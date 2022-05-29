@@ -7,7 +7,6 @@ class LoginInitial extends LoginState {}
 
 class LoginLoadingState extends LoginState {}
 
-class LanguageChangeDropDownValStateState extends LoginState {}
 
 class LoginSuccessState extends LoginState {
   final LoginModel loginModel;
@@ -20,5 +19,3 @@ class LoginErrorState extends LoginState {
 
   LoginErrorState(this.error);
 }
-
-class AppChangePasswordVisibilityState extends LoginState {}

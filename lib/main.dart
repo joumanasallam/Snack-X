@@ -4,6 +4,7 @@ import 'package:ll/cache_helper.dart';
 import 'package:ll/dio_helper.dart';
 import 'package:ll/welcome.dart';
 import 'bloc_observer.dart';
+import 'cubit/login/login_cubit.dart';
 
 
 
@@ -22,10 +23,15 @@ void main() async {
 class  MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-  return MaterialApp(
-    //theme: ThemeData(primarySwatch:Colors.teal ),
-    debugShowCheckedModeBanner: false,
-    home :welcome()
+  return MultiBlocProvider(
+    providers: [
+      BlocProvider(create: (context) => LoginCubit()),
+    ],
+    child: MaterialApp(
+      //theme: ThemeData(primarySwatch:Colors.teal ),
+      debugShowCheckedModeBanner: false,
+      home :welcome()
+    ),
   );
   }
 
